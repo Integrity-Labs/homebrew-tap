@@ -20,7 +20,6 @@ class Agt < Formula
 
   depends_on "node@22"
   depends_on "tmux"
-  depends_on cask: "claude-code"
 
   def install
     system "npm", "install", *std_npm_args
