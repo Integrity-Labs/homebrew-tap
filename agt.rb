@@ -13,17 +13,18 @@ class Agt < Formula
   homepage "https://github.com/Integrity-Labs/brandninja-monorepo"
   # URL follows npm's public tarball pattern: @scope/name/-/name-version.tgz
   # Update version and sha256 on each release
-  url "https://registry.npmjs.org/@integrity-labs/agt-cli/-/agt-cli-0.7.10.tgz"
+  url "https://registry.npmjs.org/@integrity-labs/agt-cli/-/agt-cli-0.7.11.tgz"
   # sha256 — update after publishing to npm
-  sha256 "bbdd349cfd1491061483474a84e716e3434399192e5f72c35bb5584717f54a57"
+  sha256 "c2e98114a9041408f81dc908c7357cc23ef051596e392521f010056f7837adc9"
   license "MIT"
 
   depends_on "node@22"
-  depends_on "tmux"
 
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+    # Ensure acpx is available for persistent agent sessions
+    system "npm", "install", "-g", "acpx@latest" unless which("acpx")
   end
 
   test do
