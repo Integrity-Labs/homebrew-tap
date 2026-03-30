@@ -13,9 +13,9 @@ class Agt < Formula
   homepage "https://github.com/Integrity-Labs/brandninja-monorepo"
   # URL follows npm's public tarball pattern: @scope/name/-/name-version.tgz
   # Update version and sha256 on each release
-  url "https://registry.npmjs.org/@integrity-labs/agt-cli/-/agt-cli-0.7.11.tgz"
+  url "https://registry.npmjs.org/@integrity-labs/agt-cli/-/agt-cli-0.7.12.tgz"
   # sha256 — update after publishing to npm
-  sha256 "c2e98114a9041408f81dc908c7357cc23ef051596e392521f010056f7837adc9"
+  sha256 "cfd2032ff7c458e93c2fc0c10273e40a6f728fd68ba11efc6116b768dc28d0a2"
   license "MIT"
 
   depends_on "node@22"
@@ -23,8 +23,8 @@ class Agt < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
-    # Ensure acpx is available for persistent agent sessions
-    system "npm", "install", "-g", "acpx@latest" unless which("acpx")
+    # acpx is an npm dependency — available via node_modules/.bin/
+    # The CLI resolves it automatically via getAcpxBin()
   end
 
   test do
