@@ -13,9 +13,9 @@ class Agt < Formula
   homepage "https://github.com/Integrity-Labs/brandninja-monorepo"
   # URL follows npm's public tarball pattern: @scope/name/-/name-version.tgz
   # Update version and sha256 on each release
-  url "https://registry.npmjs.org/@integrity-labs/agt-cli/-/agt-cli-0.14.14.tgz"
+  url "https://registry.npmjs.org/@integrity-labs/agt-cli/-/agt-cli-0.14.15.tgz"
   # sha256 updated by publish-cli.sh after npm publish
-  sha256 "c802cc3318787d086e985012ba8cd2c16510c65fbbdf44089769daf81c8a6102"
+  sha256 "a9518462833a0915e3a28f4fbe4af92ef69a7ebcfd923a827cadd22f3333a283"
   license "MIT"
 
   depends_on "node@22"
